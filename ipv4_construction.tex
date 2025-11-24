@@ -1,1 +1,57 @@
-\documentclass{article}
+\documentclass[a4paper,11pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}      % 余白調整用
+\usepackage{booktabs}      % きれいな表用
+\usepackage{amsmath}       % 数式用
+\usepackage{fancyhdr}      % ヘッダー・フッター用
+
+% 余白の設定
+\geometry{left=25mm, right=25mm, top=30mm, bottom=30mm}
+
+% タイトル設定
+\title{\textbf{\Huge IPv4を速攻で攻略しよう}\\ \large 脳死で覚えるサブネット設計}
+\author{Nozomu Wada}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
+
+% 第1部：はじめに
+\chapter{はじめに}
+
+\section{目的}
+とりあえずネットワークに関するテストを乗り切りたい人、忙しい人に向けた「実践的」な解説書です。
+深い理論は一旦置いておき、\textbf{「どう計算すれば答えが出るか」}にフォーカスします。
+
+\section{前提知識}
+このレポートを読むにあたり、以下の知識があったほうがいいかもです。
+\begin{itemize}
+    \item 二進数の計算ができること
+    \item サブネットマスクの概念をなんとなく知っていること
+    \item CIDR表記（/24など）をなんとなく知っていること
+\end{itemize}
+
+\section{今回の例題}
+スケール \textbf{10.10.0.0/16} のネットワークを、以下の要件に合わせて分割します。
+
+\begin{table}[h]
+    \centering
+    \caption{ネットワーク要件}
+    \label{tab:requirements}
+    \begin{tabular}{lcr}
+        \toprule
+        \textbf{拠点名} & \textbf{必要ホスト数} & \textbf{備考} \\
+        \midrule
+        Factory & 3000 &  \\
+        Office  & 1000 &  \\
+        Lab     & 120  &  \\
+        Link    & 2    & 二拠点間接続 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\clearpage
