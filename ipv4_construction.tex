@@ -1,9 +1,10 @@
 \documentclass[a4paper,11pt]{report}
 \usepackage[utf8]{inputenc}
-\usepackage{geometry}      % 余白調整用
-\usepackage{booktabs}      % きれいな表用
-\usepackage{amsmath}       % 数式用
-\usepackage{fancyhdr}      % ヘッダー・フッター用
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{luatexja}
 
 % 余白の設定
 \geometry{left=25mm, right=25mm, top=30mm, bottom=30mm}
@@ -23,10 +24,12 @@
 % 第1部：はじめに
 \chapter{はじめに}
 
+%1.0
 \section{目的}
 とりあえずネットワークに関するテストを乗り切りたい人、忙しい人に向けた「実践的」な解説書です。
 深い理論は一旦置いておき、\textbf{「どう計算すれば答えが出るか」}にフォーカスします。
 
+%1.1
 \section{前提知識}
 このレポートを読むにあたり、以下の知識があったほうがいいかもです。
 \begin{itemize}
@@ -35,6 +38,10 @@
     \item CIDR表記（/24など）をなんとなく知っていること
 \end{itemize}
 
+\subsection{!!注意!!}
+実践的ではあるが、とりあえずテストをパスしたい、なんとなく理解したい人むけ
+
+%1.2
 \section{今回の例題}
 スケール \textbf{10.10.0.0/16} のネットワークを、以下の要件に合わせて分割します。
 
@@ -55,3 +62,13 @@
 \end{table}
 
 \clearpage
+
+\chapter{ステップ1: ホスト数からサブネットマスクを決定する}
+\section{Factoryのサブネット設計}
+Factoryは3000台のホストが必要。2進数で表現すると3000は以下のようになる。
+
+
+
+
+
+\end{document}
